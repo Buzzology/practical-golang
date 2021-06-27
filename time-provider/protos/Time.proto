@@ -1,0 +1,8 @@
+syntax = "proto3";
+package Transport;
+
+option go_package = "/transport";
+
+message Time {
+  string time = 1;
+}
