@@ -12,7 +12,9 @@ Article #1a: Practical Golang: Getting started with NATS and related patterns
 - Setup time-provider service
 
 Article #1b: The master-slave pattern  
-
+- Setup a file server with service discovery
+- Setup a master worker to distribute 20 test tasks and any additional tasks received via NATS
+- Setup a worker to process tasks
 
 
 ## NATS
@@ -32,3 +34,6 @@ A message will be sent to a single subscriber. If there are multiple subscribers
 
 ## Running a service
 `go run main.go localhost:4222`  
+
+
+Up to he
