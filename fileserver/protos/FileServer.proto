@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package FileServer;
+option go_package = "/fileserver";
+
+message DiscoverableServiceTransport {
+  string Address = 1;
+}
+
