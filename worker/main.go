@@ -1,4 +1,4 @@
-package worker
+package main
 
 import (
 	"bytes"
@@ -22,7 +22,7 @@ func main() {
 
 	// Ensure that we've received the nats address
 	if len(os.Args) != 2 {
-		fmt.Println("Wrong number of arguments. Need NATS server address.")
+		fmt.Println("wrong number of arguments. Need NATS server address.")
 		return
 	}
 
@@ -31,7 +31,7 @@ func main() {
 	// Connect to nats
 	nc, err = nats.Connect(os.Args[1])
 	if err != nil {
-		fmt.Errorf("Failed to connect to nats: %v", os.Args[1])
+		fmt.Errorf("failed to connect to nats: %v", os.Args[1])
 		return
 	}
 
@@ -50,7 +50,7 @@ func doWork() {
 		// Request a task with a 1 second timeout
 		msg, err := nc.Request("Work.TaskToDo", nil, 1*time.Second)
 		if err != nil {
-			fmt.Print("Something went wrong. Waiting two seconds before retrying:", err)
+			fmt.Errorf("something went wrong. Waiting two seconds before retrying: %v", err)
 			continue
 		}
 
@@ -87,7 +87,7 @@ func doWork() {
 
 		data, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
-			fmt.Errorf("Failed to read request body: %v", err)
+			fmt.Errorf("failed to read request body: %v", err)
 			continue
 		}
 

@@ -106,7 +106,7 @@ func initTestTasks() {
 
 		// Terminate if we hit any errors
 		if err != nil || r.StatusCode != http.StatusOK {
-			fmt.Errorf("failed to send payload to server: %v %v", err, r.StatusCode)
+			fmt.Errorf("failed to send payload to server: %v", err)
 			continue
 		}
 
