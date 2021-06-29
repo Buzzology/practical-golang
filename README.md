@@ -33,7 +33,4 @@ Retrieve the go library: `go get https://github.com/nats-io/nats`
 A message will be sent to a single subscriber. If there are multiple subscribers on one will receive/process the message.
 
 ## Running a service
-`go run main.go localhost:4222`  
-
-
-Up to he
+`go run main.go localhost:4222`

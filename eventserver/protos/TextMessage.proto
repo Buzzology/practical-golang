@@ -1,0 +1,9 @@
+syntax = "proto3";
+package EventServer;
+
+option go_package = "/eventserver";
+
+message TextMessage {
+  int32 id = 1;
+  string body = 2;
+}
